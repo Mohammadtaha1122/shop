@@ -1,87 +1,19 @@
 import { useRef } from "react";
+
 function Subject() {
   const items = [
-    {
-      id: 1,
-      icon: "https://flagcdn.com/w40/ir.png",
-      title: "قدرت گرفته از خودمان",
-    },
-    {
-      id: 2,
-      icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-      title: "طلا",
-    },
-    {
-      id: 3,
-      icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png",
-      title: "کتاب‌های کنکور",
-    },
-    {
-      id: 4,
-      icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
-      title: "لوازم خانگی",
-    },
-    {
-      id: 5,
-      icon: "https://flagcdn.com/w40/ir.png",
-      title: "قدرت گرفته از خودمان",
-    },
-    {
-      id: 6,
-      icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-      title: "طلا",
-    },
-    {
-      id: 7,
-      icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png",
-      title: "کتاب‌های کنکور",
-    },
-    {
-      id: 8,
-      icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
-      title: "لوازم خانگی",
-    },
-    {
-      id: 9,
-      icon: "https://flagcdn.com/w40/ir.png",
-      title: "قدرت گرفته از خودمان",
-    },
-    {
-      id: 10,
-      icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-      title: "طلا",
-    },
-    {
-      id: 11,
-      icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png",
-      title: "کتاب‌های کنکور",
-    },
-    {
-      id: 12,
-      icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
-      title: "لوازم خانگی",
-    },
-    {
-      id: 9,
-      icon: "https://flagcdn.com/w40/ir.png",
-      title: "قدرت گرفته از خودمان",
-    },
-    {
-      id: 10,
-      icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-      title: "طلا",
-    },
-    {
-      id: 11,
-      icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png",
-      title: "کتاب‌های کنکور",
-    },
-    {
-      id: 12,
-      icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
-      title: "لوازم خانگی",
-    },
-    // ...بقیه موردها
+    { id: 1, icon: "https://flagcdn.com/w40/ir.png", title: "قدرت گرفته از خودمان" },
+    { id: 2, icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", title: "طلا" },
+    { id: 3, icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png", title: "کتاب‌های کنکور" },
+    { id: 4, icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png", title: "لوازم خانگی" },
+    { id: 5, icon: "https://flagcdn.com/w40/ir.png", title: "قدرت گرفته از خودمان" },
+    { id: 6, icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", title: "طلا" },
+    { id: 7, icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png", title: "کتاب‌های کنکور" },
+    { id: 8, icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png", title: "لوازم خانگی" },
+    { id: 9, icon: "https://flagcdn.com/w40/ir.png", title: "قدرت گرفته از خودمان" },
+    { id: 10, icon: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png", title: "طلا" },
+    { id: 11, icon: "https://cdn-icons-png.flaticon.com/512/201/201623.png", title: "کتاب‌های کنکور" },
+    { id: 12, icon: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png", title: "لوازم خانگی" },
   ];
 
   const scrollRef = useRef();
@@ -107,12 +39,12 @@ function Subject() {
           ref={scrollRef}
           className="flex overflow-x-auto gap-6 scroll-smooth scrollbar-hide px-4"
         >
-          {items.map((item ,i) => (
+          {items.map((item, i) => (
             <div 
               key={i}
               className="flex flex-col items-center min-w-[100px] text-center"
             >
-              <img src={item.icon} className="w-10 h-10 mb-2" />
+              <img src={item.icon} alt={`آیکون ${item.title}`} className="w-10 h-10 mb-2" />
               <p className="text-sm font-semibold whitespace-nowrap">
                 {item.title}
               </p>

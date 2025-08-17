@@ -3,7 +3,6 @@ import profile from "../../assets/profile.png";
 
 function Chat() {
   const [text, setText] = useState("");
-  // const [chatBox ,setChatBox] = useState()
   function btnHandler() {
     setText("chat basalam");
   }
@@ -23,10 +22,10 @@ function Chat() {
           <div className="flex items-center gap-3">
             <img
               src={profile}
-              alt="img"
+              alt="تصویر پروفایل باسلام"
               className="rounded-full w-[50px] mb-3"
             />
-            <span className="text-black  text-xl px-2 py-1 rounded-md">
+            <span className="text-black text-xl px-2 py-1 rounded-md">
               باسلام
             </span>
           </div>
@@ -41,15 +40,19 @@ function Chat() {
           <img
             src="https://statics.basalam.com/public/admin/3KVn1/01-17/pUnFcqXFpQvDQHUKFEV80uQiKqlwWgm907fPanEvbIHvlyXfcj.svg"
             className="w-[300px]"
-            alt=""
+            alt="تصویر گفت‌وگو"
           />
           <span>گفت‌وگو کنید</span>
         </div>
       ) : (
         <div className="flex flex-col w-screen">
-          <button className=" cursor-pointer p-3 border-2 rounded-2xl mb-6 mx-auto justify-center" onClick={backBtn}>back</button>
+          <button
+            className="cursor-pointer p-3 border-2 rounded-2xl mb-6 mx-auto justify-center"
+            onClick={backBtn}
+          >
+            بازگشت
+          </button>
           <p>{text}</p>
-          
         </div>
       )}
     </div>

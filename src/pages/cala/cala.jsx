@@ -7,14 +7,14 @@ function Cala() {
   const { id } = useParams();
   const calaData = calas.find((cala) => String(cala.id) === id);
   return (
-    <div className=" container justify-between flex mt-1">
+    <div className="container justify-between flex mt-1">
       <img
         className="w-1/2 rounded-2xl shadow-2xl mt-10 mr-10"
         src={calaData.img}
-        alt=""
+        alt={`تصویر کالا شماره ${calaData.id}`}
       />
       <div className="mt-10 w-[550px]">
-        <h1 className="text-3xl mb-4"> کالا با شماره:{calaData.id}</h1>
+        <h1 className="text-3xl mb-4">کالا با شماره: {calaData.id}</h1>
         <h2 className="text-2xl leading-10">{calaData.text}</h2>
         <div dir="ltr" className="flex items-center gap-3">
           <span className="text-xl p-2 bg-orange-300 text-orange-600 rounded-lg">{calaData.off}</span>

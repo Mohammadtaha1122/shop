@@ -1,35 +1,41 @@
 import { useContext, useEffect, useState } from "react";
 import { contextApi } from "../../context/context";
-import { useQuery } from "@tanstack/react-query";
 import { Link, useSearchParams } from "react-router-dom";
 
 function SearchCala() {
-  const [searchPrams] = useSearchParams();
-  const { searchValue,setSearchValue } = useContext(contextApi);
-  const query = searchPrams.get("q");
+  const [searchParams] = useSearchParams();
+  const { searchValue, setSearchValue } = useContext(contextApi);
+  const query = searchParams.get("q");
   const [cala, setCala] = useState([]);
+
   useEffect(() => {
     async function fetchResult() {
-      const res = await fetch(
-        `https://dummyjson.com/products/search?q=${searchValue}`
-      );
+      const res = await fetch(`https://dummyjson.com/products/search?q=${searchValue}`);
       const data = await res.json();
-      const filteredCala = data.products.filter((item) => {
-        return item.title.toLowerCase().includes(query.toLowerCase());
-      });
+      const filteredCala = data.products.filter((item) =>
+        item.title.toLowerCase().includes(query.toLowerCase())
+      );
       setCala(filteredCala);
-      // console.log(data)
     }
-    setSearchValue(query)
+    setSearchValue(query);
     fetchResult();
   }, [query]);
+
   return (
-    <div className="bg-white pt-1 ">
+    <div className="bg-white pt-1">
       <div className="container">
         <ul className="grid max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 grid-cols-4 gap-4">
           {cala.map((item) => (
-            <Link to={`/cala/${item.id}`} key={item.id} className="border border-gray-300 rounded-2xl p-3">
-              <img className="w-full rounded-2xl" src={item.images} alt="img" />
+            <Link
+              to={`/cala/${item.id}`}
+              key={item.id}
+              className="border border-gray-300 rounded-2xl p-3"
+            >
+              <img
+                className="w-full rounded-2xl"
+                src={item.images?.[0]}
+                alt={`تصویر محصول ${item.title}`}
+              />
               <h2 className="text-xl mb-10 line-clamp-1">{item.title}</h2>
               <h3 className="line-clamp-2 mb-5">{item.description}</h3>
               <div className="flex justify-between text-lg">

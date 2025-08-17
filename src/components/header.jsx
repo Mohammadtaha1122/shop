@@ -26,7 +26,7 @@ function Header() {
             <img
               src="https://basalam.com/img/basalam-logotype.svg"
               className="mt-1 w-[85px]"
-              alt=""
+              alt="لوگوی باسلام"
             />
           </Link>
           <div className="items-center flex max-lg:hidden">
@@ -39,7 +39,9 @@ function Header() {
                 onClick={() => navigate(`/search?q=${searchValue}`)}
                 className="fa-solid fa-magnifying-glass cursor-pointer"
               ></i>
+              <label htmlFor="header-search" className="sr-only">جست و جو در بازار</label>
               <input
+                id="header-search"
                 value={searchValue}
                 onKeyDown={enterHandler}
                 onChange={(e) => setSearchValue(e.target.value)}
@@ -94,7 +96,7 @@ function Header() {
           </Link>
         </div>
         <nav className="lg:hidden border-t border-gray-300 max-md:text-md max-md:font-semibold max-sm:text-sm fixed bottom-0 flex justify-around py-4 text-nowrap left-0 right-0 bg-white z-100">
-            <Link
+          <Link
             to={"/"}
             className="flex flex-col items-center gap-2"
             onClick={() => setSearchValue("")}
@@ -113,13 +115,6 @@ function Header() {
             <i className="fa-solid fa-cart-shopping"></i>
             <span>سبد خرید</span>
           </Link>
-          {/* <Link
-            to={"/createBoth"}
-            className="px-2 py-1 flex justify-center items-center border-2 rounded-2xl gap-2 border-red-500 "
-          >
-            <i className="text-red-500 fa-solid fa-shop"></i>
-            <span className="text-red-500">ایجاد غرفه</span>
-          </Link> */}
           {isLogin ? (
             <div className="flex cursor-pointer flex-col items-center justify-center gap-1">
               <i className="fa-regular fa-circle-user text-2xl"></i>
@@ -139,7 +134,6 @@ function Header() {
               </div>
             </button>
           )}
-          
         </nav>
       </header>
       {form && <Form />}

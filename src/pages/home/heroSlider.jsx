@@ -5,15 +5,15 @@ import { useState } from "react";
 
 function HeroSlider() {
   const slids = [
-    { id: 1, img: cream },
-    { id: 2, img: slidBuying },
-    { id: 3, img: lifeNotStop },
+    { id: 1, img: cream, alt: "کرم مراقبت از پوست" },
+    { id: 2, img: slidBuying, alt: "خرید آسان با باسلام" },
+    { id: 3, img: lifeNotStop, alt: "زندگی ادامه دارد" },
   ];
   const [slidNumber, setSlideNumber] = useState(0);
   const slid = slids[slidNumber];
   return (
-    <div className=" relative z-10 transition max-md:hidden">
-      <img className=" bg-gradient-to-l z-10" src={slid.img} alt="" />
+    <div className="relative z-10 transition max-md:hidden">
+      <img className="bg-gradient-to-l z-10" src={slid.img} alt={slid.alt} />
       <button
         onClick={() => setSlideNumber((prev) => (prev + 1) % slids.length)}
       >

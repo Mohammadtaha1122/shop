@@ -14,22 +14,23 @@ function Footer() {
   ]);
   return (
     <div className="bg-white py-4">
-      <div className=" flex max-md:flex-col max-lg:mb-14 justify-between items-center container ">
-        <div className="">
-          <img src={logo} alt="" />
+      <div className="flex max-md:flex-col max-lg:mb-14 justify-between items-center container">
+        <div>
+          <img src={logo} alt="لوگوی باسلام" />
         </div>
         <div className="grid grid-cols-2 gap-8">
           {proimes.map((item) => (
             <div key={item.id} className="flex items-center gap-4">
-              <img src={item.logo} alt="logo" />
-              <span>{item.text}</span>
+              <img src={item.logo} alt={item.text} />
+              <p>{item.text}</p>
             </div>
           ))}
         </div>
         <div>
           <p className="mb-4">ایمیلت رو وارد کن تا از تخفیف‌ها باخبر بشی</p>
-          <form className=" flex justify-between">
-            <input type="text" className="w-[350px] max-md:w-full border-2 border-gray-600 outline-none rounded-lg ml-4 px-2 py-4" placeholder="ایمیل"/>
+          <form className="flex justify-between">
+            <label htmlFor="email" className="sr-only">ایمیل</label>
+            <input id="email" type="text" className="w-[350px] max-md:w-full border-2 border-gray-600 outline-none rounded-lg ml-4 px-2 py-4" placeholder="ایمیل"/>
             <button className="bg-[#FF5C35] text-white py-4 px-6 rounded-2xl" type="submit">ارسال</button>
           </form>
         </div>

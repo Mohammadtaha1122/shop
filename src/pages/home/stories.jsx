@@ -11,12 +11,12 @@ function Stories() {
   }, []);
 
   return (
-    <div className="flex gap-5 overflow-scroll max-md:px-4 container items-center text-center py-10 ">
+    <div className="flex gap-5 overflow-scroll scrollbar-hide max-md:px-4 container items-center text-center py-10 ">
       {items.map((item) => (
         <div key={item.id} className="w-[94px]">
           <img
             src={item.thumbnail}
-            alt={item.title}
+            alt={`تصویر محصول ${item.title}`}
             className="w-24 max-md:w-20 max-sm:w-18 rounded-full border-2 border-red-500 object-cover"
           />
           <p className="truncate">{item.title}</p>
@@ -24,7 +24,7 @@ function Stories() {
       ))}
       <div className="flex gap-6 flex-col max-md:px-4 mr-5">
         <p className="text-[#3d3d4e] text-nowrap">برای استوری های بیشتر</p>
-        <a className="flex text-[#ff5c35] gap-1.5 text-nowrap">
+        <a className="flex text-[#ff5c35] gap-1.5 text-nowrap" href="#">
           <p>برو بازار گردی</p>
           <i className="fa-solid fa-angle-left mt-1"></i>
         </a>
