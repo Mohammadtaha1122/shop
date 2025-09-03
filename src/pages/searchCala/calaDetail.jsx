@@ -20,7 +20,7 @@ function CalaDetail() {
   if (!products) return <p className="text-center mt-10">در حال بارگذاری ...</p>;
 
   return (
-    <div className="container mb-25">
+    <div className="container mb-25 max-md:p-6">
       <div className="container justify-between flex max-md:flex-col mt-1">
         <div>
           <img

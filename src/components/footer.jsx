@@ -14,7 +14,7 @@ function Footer() {
   ]);
   return (
     <div className="bg-white py-4">
-      <div className="flex max-md:flex-col max-lg:mb-14 justify-between items-center container">
+      <div className="flex max-md:flex-col max-lg:mb-20 justify-between items-center container">
         <div>
           <img src={logo} alt="لوگوی باسلام" />
         </div>
