@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "sbadr";
-  src: url("../font/SBADR.TTF");
+  font-family: "Vazirmatn";
+  src: url("../font/Vazirmatn-Regular.ttf");
+  font-weight: 400;
 }
 body {
+  font-family: "Vazirmatn";
   font-size: 16px;
   font-weight:500;
   color: #0d0c22;
